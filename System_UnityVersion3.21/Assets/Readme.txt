@@ -70,6 +70,8 @@ SamplScriptとPlayerControllerみて
 /*更新履歴*/
 v1.0.0 キーコンフィグ完成
 
+v1.1.0 文字コード変更
+
 
 
 /*参考サイト*/

@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        //—LŒø‰»
+        //æœ‰åŠ¹åŒ–
         jump.action.Enable();
         move.action.Enable();
         dash.action.Enable();
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //ˆÚ“®
+        //ç§»å‹•
         Vector2 moveInput = move.action.ReadValue<Vector2>();
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
         moveDirection.y = 0;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         moveDirection = moveDirection.normalized * moveSpeed * dashS;
         rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);
 
-        //ƒWƒƒƒ“ƒv
+        //ã‚¸ãƒ£ãƒ³ãƒ—
         if (jump.action.triggered && !isJumping)
         {
             rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        //’n–Ê’…’n”»’è
+        //åœ°é¢ç€åœ°åˆ¤å®š
         if (collision.gameObject.CompareTag("Ground")) isJumping = false;
     }
 }

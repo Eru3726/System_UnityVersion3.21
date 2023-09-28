@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//InputSystem‚ğg‚¦‚é‚æ‚¤‚É‚·‚é
+//InputSystemã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
 using UnityEngine.InputSystem;
 
 public class SampleScript : MonoBehaviour
@@ -10,16 +10,16 @@ public class SampleScript : MonoBehaviour
 
     void Start()
     {
-        //ƒL[‚Ì—LŒø‰»
+        //ã‚­ãƒ¼ã®æœ‰åŠ¹åŒ–
         jump.action.Enable();
     }
 
     void Update()
     {
-        if (jump.action.triggered) Debug.Log("ƒWƒƒƒ“ƒvƒL[‚ª‰Ÿ‚³‚ê‚½I");
+        if (jump.action.triggered) Debug.Log("ã‚¸ãƒ£ãƒ³ãƒ—ã‚­ãƒ¼ãŒæŠ¼ã•ã‚ŒãŸï¼");
 
-        if (jump.action.inProgress) Debug.Log("ƒWƒƒƒ“ƒvƒL[‚ª‰Ÿ‚³‚ê‚Ä‚éI");
+        if (jump.action.inProgress) Debug.Log("ã‚¸ãƒ£ãƒ³ãƒ—ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã‚‹ï¼");
 
-        if (jump.action.ReadValue<float>() == 0f) Debug.Log("ƒWƒƒƒ“ƒvƒL[‚ª—£‚³‚ê‚½I");
+        if (jump.action.ReadValue<float>() == 0f) Debug.Log("ã‚¸ãƒ£ãƒ³ãƒ—ã‚­ãƒ¼ãŒé›¢ã•ã‚ŒãŸï¼");
     }
 }

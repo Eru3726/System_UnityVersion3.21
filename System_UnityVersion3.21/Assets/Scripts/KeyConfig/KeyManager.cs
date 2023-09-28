@@ -16,18 +16,18 @@ public class KeyManager : MonoBehaviour
 
     private void Awake()
     {
-        //ƒL[ƒRƒ““Ç‚İ‚İ
+        //ã‚­ãƒ¼ã‚³ãƒ³èª­ã¿è¾¼ã¿
         rsm.Load();
 
         ClosePanel();
 
-        //ƒL[‚Ì—LŒø‰»
+        //ã‚­ãƒ¼ã®æœ‰åŠ¹åŒ–
         pause.action.Enable();
     }
 
     void Update()
     {
-        //pauseƒL[‚ª‰Ÿ‚³‚ê‚½‚ç
+        //pauseã‚­ãƒ¼ãŒæŠ¼ã•ã‚ŒãŸã‚‰
         if (pause.action.triggered)
         {
             if (openFlg == false) KeyBoardPanel();
