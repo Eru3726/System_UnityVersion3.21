@@ -1,0 +1,36 @@
+// データ取得
+function doGet() {
+  let out;
+
+  // シートの数を取得
+  var sheetCount = SpreadsheetApp.getActiveSpreadsheet().getNumSheets();
+
+  //データ格納配列
+  var data = {};
+  
+  // 全シートに対してデータを取得
+  for (var i = 0; i < sheetCount; i++) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[i];
+
+    //行（横軸）と列（縦軸）の最大数を取得
+    var maxRow = sheet.getLastRow();
+    var maxColumn = sheet.getLastColumn();
+
+    //データの取得
+    //実際のデータが2行目からなので【y = 2】から開始
+    for (var y = 2; y <= maxRow; y++) {
+      // var json_shop_id = {};
+
+      for (var x = 2; x < maxColumn; x++) {
+        var json = sheet.getRange(y, x).getValue();
+      }
+      //データ格納
+      var id = sheet.getRange(y, 2).getValue();
+      data[id] = json;
+    }
+  }
+
+  out = ContentService.createTextOutput(JSON.stringify(data, null, '\t'));
+  // 整形してテキストにします
+  return out;
+}
